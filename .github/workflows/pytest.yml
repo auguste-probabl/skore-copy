@@ -220,7 +220,7 @@ jobs:
           PACKAGE: ${{ matrix.package }}
 
       - name: Upload coverage reports to Codecov
-        if: ${{ matrix.coverage && (github.event_name == 'pull_request') }}
+        if: ${{ matrix.coverage }}
         uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
           files: ${{ matrix.package }}/coverage/pytest-coverage.xml
